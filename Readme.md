@@ -1,4 +1,4 @@
 # macOS
 
-[osascript](./osascript)
-[Reverse Shell](./reverseshell)
+- [osascript examples](./osascript)
+- [Reverse Shell](./reverseshell)
