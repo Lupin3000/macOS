@@ -94,6 +94,34 @@ $ defaults write com.apple.Safari IncludeDevelopMenu -bool false
 $ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 ```
 
+## Preview
+
+```shell
+# show current preview settings
+$ defaults read com.apple.Preview
+```
+
+## Terminal
+
+```shell
+# show current terminal settings
+$ defaults read com.apple.Terminal
+```
+
+## Spotlight
+
+```shell
+# show current spotlight settings
+$ defaults read com.apple.Spotlight
+```
+
+## Photos
+
+```shell
+# show current photos settings
+$ defaults read com.apple.Photos
+```
+
 ## ScreenSharing
 
 ```shell
