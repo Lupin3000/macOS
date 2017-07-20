@@ -1,6 +1,6 @@
 # macOS
 
-... just to remember ...
+... don't need this always, but now i cannot forget ...
 
 - [Commands](./commands)
 - [defaults](./defaults)

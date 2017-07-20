@@ -1,7 +1,5 @@
 # Commands
 
-... some commands i sometime need...
-
 ## Softwareupdate
 
 ```shell
