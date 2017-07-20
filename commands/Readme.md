@@ -18,6 +18,12 @@ $ sudo softwareupdate -iva
 ```shell
 # system version information
 $ sw_vers
+
+# list disks (including internal and external)
+$ diskutil list
+
+# view running system daemons
+$ sudo launchctl list
 ```
 
 ## System profiler
@@ -55,6 +61,22 @@ $ xcode-select -p
 $ xcode-select --install
 ```
 
+## Firewall
+
+```shell
+# enable firewall
+$ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
+# enable logging
+$ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setloggingmode on
+
+# enable stealth mode
+$ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setstealthmode on
+
+# restart
+$ sudo pkill -HUP socketfilterfw
+```
+
 ## Network
 
 ```shell
@@ -66,6 +88,12 @@ $ ifconfig en0 | grep 'ether' | cut -d " " -f2
 
 # restart interface (en0)
 $ sudo ifconfig en0 down && sudo ifconfig en0 up
+
+# list open network files
+$ sudo lsof -Pni
+
+# list contents of various network-related data structures
+$ sudo netstat -atln
 
 # show connections
 $ networksetup -listallhardwareports
@@ -85,6 +113,17 @@ $ /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resour
 # disconnect from wifi network
 $ sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -z
 
+
+# show saved WiFi informations
+$ cat /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist
+
 # flush DNS
 $ sudo killall -HUP mDNSResponder
+```
+
+
+##
+
+```shell
+
 ```

@@ -115,4 +115,10 @@ $ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
 # enable .DS_Store
 $ defaults write com.apple.desktopservices DSDontWriteNetworkStores false
+
+# disable crash reporter
+$ defaults write com.apple.CrashReporter DialogType none
+
+# disable save into iCloud
+$ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 ```
