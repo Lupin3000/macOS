@@ -126,4 +126,27 @@ $ sudo killall -HUP mDNSResponder
 ```shell
 # show calendar of specific year
 $ ncal -w 2018
+
+# permanently show Library
+$ chflags nohidden ~/Library/
+
+# permanently hide Library
+$ chflags hidden ~/Library/
+
+# stress your Mac
+$ yes > /dev/null
+
+# hide files (without .)
+$ chflags hidden <file name>
+
+# unhide files (without .)
+$ chflags nohidden <file name>
+
+# start quicklook
+$ qlmanage -p Pictures/<file name>
+
+# piping output into apps
+$ ls -la | open -f
+$ ls -la | open -f -a Atom
+$ ls -la | open -f -a TextMate
 ```
