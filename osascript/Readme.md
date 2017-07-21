@@ -45,3 +45,10 @@ $ osascript -e 'tell app "Safari" to activate'
 # close Safari
 $ osascript -e 'quit app "safari.app"'
 ```
+
+## iTunes
+
+```shell
+# open iTunes
+$ osascript -e 'tell application "iTunes" to activate'
+```
