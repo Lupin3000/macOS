@@ -17,3 +17,9 @@ Host <name>
   AddressFamily inet
   Cipher blowfish-cbc
 ```
+
+By default, macOS does not have sshd or Remote Login enabled. To enable sshd and allow incoming ssh connections:
+
+```shell
+$ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+```
