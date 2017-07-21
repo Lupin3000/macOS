@@ -36,6 +36,13 @@ $ osascript -e 'tell app "Finder" to make new Finder window'
 $ osascript -e 'tell application "Finder" to empty trash'
 ```
 
+## Messages
+
+```shell
+# open Messages
+$ osascript -e 'tell application "messages" to activate'
+```
+
 ## Safari
 
 ```shell
