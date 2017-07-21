@@ -113,7 +113,6 @@ $ /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resour
 # disconnect from wifi network
 $ sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -z
 
-
 # show saved WiFi informations
 $ cat /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist
 
@@ -122,8 +121,9 @@ $ sudo killall -HUP mDNSResponder
 ```
 
 
-##
+## just for fun
 
 ```shell
-
+# show calendar of specific year
+$ ncal -w 2018
 ```

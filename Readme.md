@@ -6,4 +6,5 @@
 - [defaults](./defaults)
 - [osascript examples](./osascript)
 - [SSH](./SSH)
+- [Magical Links](./MagicalLinks)
 - [Reverse Shell](./reverseshell)

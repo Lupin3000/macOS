@@ -8,7 +8,6 @@ $ killall Dock
 
 # reset to factory settings
 $ defaults delete com.apple.dock
-$ killall Dock
 
 # show current dock settings
 $ defaults read com.apple.dock
@@ -33,6 +32,32 @@ $ defaults write com.apple.dock orientation -string left
 
 # position right
 $ defaults write com.apple.dock orientation -string right
+
+# show wallpaper location
+$ defaults write com.apple.dock desktop-picture-show-debug-text -bool true
+
+# don't show wallpaper location
+$ defaults delete com.apple.dock desktop-picture-show-debug-text
+```
+
+# Launchpad
+
+```shell
+# enlarging the Icons
+$ defaults write com.apple.dock springboard-rows -int 4
+$ defaults write com.apple.dock springboard-columns -int 4
+$ killall Dock
+
+# shrinking the Icons
+$ defaults write com.apple.dock springboard-rows -int 10
+$ defaults write com.apple.dock springboard-columns -int 10
+$ killall Dock
+
+# reset to factory seetings
+$ defaults delete com.apple.dock springboard-rows
+$ defaults delete com.apple.dock springboard-columns
+$ defaults write com.apple.dock ResetLaunchPad -bool true
+$ killall Dock
 ```
 
 # Dashboard
@@ -67,6 +92,18 @@ $ defaults write NSGlobalDomain AppleShowAllExtensions -bool false
 
 # show file extension
 $ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# enable timestamp on zip filenames
+$ defaults write com.apple.finder ArchiveTimestamp -bool true
+
+# disable timestamp on zip filenames
+$ defaults delete com.apple.finder ArchiveTimestamp
+
+# turn of empty trash sound
+$ defaults write com.apple.finder FinderSounds -bool false
+
+# turn on empty trash sound
+$ defaults delete com.apple.finder FinderSounds
 ```
 
 ## Safari
@@ -92,6 +129,12 @@ $ defaults write com.apple.Safari IncludeDevelopMenu -bool false
 
 # show developer menu
 $ defaults write com.apple.Safari IncludeDevelopMenu -bool true
+
+# enable tab memory
+$ defaults write com.apple.safari NSQuitAlwaysKeepsWindows -bool true
+
+# disable tab memory
+$ defaults write com.apple.safari NSQuitAlwaysKeepsWindows -bool false
 ```
 
 ## Preview
@@ -129,6 +172,37 @@ $ defaults read com.apple.Photos
 $ defaults read com.apple.ScreenSharing
 ```
 
+## QuickTime
+
+```shell
+# show current QuickTime settings
+$ defaults read com.apple.QuickTimePlayerX
+
+# diable rounded corners
+$ defaults write com.apple.QuickTimePlayerX MGCinematicWindowDebugForceNoRoundedCorners -bool true
+
+# enable rounded corners
+$ defaults delete com.apple.QuickTimePlayerX MGCinematicWindowDebugForceNoRoundedCorners
+
+# enable autostart movies
+$ defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
+
+# disable autostart movies
+$ defaults delete com.apple.QuickTimePlayerX MGPlayMovieOnOpen
+
+# disable controller bar
+$ defaults write com.apple.QuickTimePlayerX MGUIVisibilityNeverAutoshow -bool true
+
+# enable controller bar
+$ defaults delete com.apple.QuickTimePlayerX MGUIVisibilityNeverAutoshow
+
+# enable auto show subtitles
+$ defaults write com.apple.QuickTimePlayerX MGEnableCCAndSubtitlesOnOpen -bool true
+
+# disable auto show subtitles
+$ defaults delete com.apple.QuickTimePlayerX MGEnableCCAndSubtitlesOnOpen
+```
+
 ## Enable/Disable features
 
 ```shell
@@ -149,4 +223,10 @@ $ defaults write com.apple.CrashReporter DialogType none
 
 # disable save into iCloud
 $ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# disable rubber-band scrolling
+$ defaults write -g NSScrollViewRubberbanding -int 0
+
+# enable rubber-band scrolling
+$ defaults delete -g NSScrollViewRubberbanding
 ```
