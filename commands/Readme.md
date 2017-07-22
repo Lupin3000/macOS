@@ -46,6 +46,15 @@ $ system_profiler SPHardwareDataType | grep "Processor"
 
 # show model
 $ system_profiler SPHardwareDataType | grep "Model Identifier"
+
+# show screen resolution
+$ system_profiler SPDisplaysDataType | grep "Resolution"
+
+# show remaining battery (percentage)
+$ pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';'
+
+# show remaining battery (time)
+$ pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f3 -d';'
 ```
 
 ## Commandline Tools
@@ -149,4 +158,7 @@ $ qlmanage -p Pictures/<file name>
 $ ls -la | open -f
 $ ls -la | open -f -a Atom
 $ ls -la | open -f -a TextMate
+
+# list installed Apps (via AppStore)
+$ mdfind kMDItemAppStoreHasReceipt=1
 ```

@@ -34,6 +34,12 @@ $ osascript -e 'tell app "Finder" to make new Finder window'
 
 # empty Trash
 $ osascript -e 'tell application "Finder" to empty trash'
+
+# set background image
+$ osascript -e 'tell application "Finder" to set desktop picture to POSIX file "<path/to/image>"'
+
+# eject all mountable volumes
+$ osascript -e 'tell application "Finder" to eject (every disk whose ejectable is true)'
 ```
 
 ## Messages
@@ -51,6 +57,9 @@ $ osascript -e 'tell app "Safari" to activate'
 
 # close Safari
 $ osascript -e 'quit app "safari.app"'
+
+# get current URL
+$ osascript -e 'tell application "Safari" to get URL of current tab of front window'
 ```
 
 ## iTunes
