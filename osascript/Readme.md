@@ -4,10 +4,10 @@
 
 ```shell
 # shutdown without confirmation
-$ osascript -e 'tell app "System Events" to shut down'
+$ osascript -e 'tell application "System Events" to shut down'
 
 # restart without confirmation
-$ osascript -e 'tell app "System Events" to restart'
+$ osascript -e 'tell application "System Events" to restart'
 ```
 
 ## Volume
@@ -29,8 +29,23 @@ $ osascript -e 'set volume output muted true'
 ## Finder
 
 ```shell
+# open hard drive that contains the currently running System folder
+$ osascript -e 'tell application "Finder" to open the startup disk'
+
+# open home directory in Finder
+$ osascript -e 'tell application "Finder" to open home'
+
+# get name of front Finder window
+$ osascript -e 'tell application "Finder" to get the name of front Finder window'
+
+# get position of front Finder window
+$ osascript -e 'tell application "Finder" to get the position of the front Finder window'
+
+# set position of front Finder window
+$ osascript -e 'tell application "Finder" to set the position of the front Finder window to {94, 134}'
+
 # open new Finder window
-$ osascript -e 'tell app "Finder" to make new Finder window'
+$ osascript -e 'tell application "Finder" to make new Finder window'
 
 # empty Trash
 $ osascript -e 'tell application "Finder" to empty trash'
@@ -59,10 +74,10 @@ $ osascript -e 'tell application "messages" to activate'
 
 ```shell
 # open and focus Safari
-$ osascript -e 'tell app "Safari" to activate'
+$ osascript -e 'tell application "Safari" to activate'
 
 # close Safari
-$ osascript -e 'quit app "safari.app"'
+$ osascript -e 'quit application "safari.app"'
 
 # get current URL
 $ osascript -e 'tell application "Safari" to get URL of current tab of front window'
