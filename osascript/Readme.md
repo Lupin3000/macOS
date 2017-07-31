@@ -1,5 +1,7 @@
 # osascript
 
+Some one-liners which improve daily workflow...
+
 ## System Events
 
 ```shell
@@ -47,6 +49,9 @@ $ osascript -e 'tell application "Finder" to set the position of the front Finde
 # open new Finder window
 $ osascript -e 'tell application "Finder" to make new Finder window'
 
+# close all Finder windows
+$ osascript -e 'tell application "Finder" to close every window'
+
 # empty Trash
 $ osascript -e 'tell application "Finder" to empty trash'
 
@@ -89,9 +94,25 @@ $ osascript -e 'tell application "Safari" to tell front window to set current ta
 $ osascript -e 'tell application "Safari" to close tab 1 of window 1'
 ```
 
+# QuickTime
+
+```shell
+# play movie of front QuickTime
+$ osascript -e 'tell application "QuickTime Player" to play the front movie'
+
+# stop movie of front QuickTime
+$ osascript -e 'tell application "QuickTime Player" to stop the front movie'
+```
+
 ## iTunes
 
 ```shell
 # open iTunes
 $ osascript -e 'tell application "iTunes" to activate'
+
+# get name of last song in playlist
+$ osascript -e 'tell application "iTunes" to get the name of the last track of the first library playlist'
+
+# stop iTunes
+$ osascript -e 'tell application "iTunes" to stop'
 ```
