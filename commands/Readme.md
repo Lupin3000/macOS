@@ -129,6 +129,13 @@ $ cat /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.pli
 $ sudo killall -HUP mDNSResponder
 ```
 
+## enable features
+
+```shell
+# enable locate
+$ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+```
+
 ## just for fun
 
 ```shell
