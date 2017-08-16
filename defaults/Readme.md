@@ -203,6 +203,16 @@ $ defaults write com.apple.QuickTimePlayerX MGEnableCCAndSubtitlesOnOpen -bool t
 $ defaults delete com.apple.QuickTimePlayerX MGEnableCCAndSubtitlesOnOpen
 ```
 
+## Apache
+
+```shell
+# read apache LaunchDaemons settings
+$ defaults read /System/Library/LaunchDaemons/org.apache.httpd.plist
+
+# enable apache on boot
+$ sudo defaults write /System/Library/LaunchDaemons/org.apache.httpd Disabled -bool false
+```
+
 ## Enable/Disable features
 
 ```shell
