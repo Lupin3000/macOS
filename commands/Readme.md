@@ -129,7 +129,6 @@ $ cat /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.pli
 $ sudo killall -HUP mDNSResponder
 ```
 
-
 ## just for fun
 
 ```shell
