@@ -239,4 +239,7 @@ $ defaults write -g NSScrollViewRubberbanding -int 0
 
 # enable rubber-band scrolling
 $ defaults delete -g NSScrollViewRubberbanding
+
+# enable AirDrop for ethernet
+$ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 ```
