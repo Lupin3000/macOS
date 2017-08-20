@@ -33,6 +33,9 @@ $ ioreg -p IOUSB -l
 
 # list USB devices (via I/O Kit registry and show properties with full-width display)
 $ ioreg -p IOUSB -w0 -l
+
+# list users
+$ dscl . list /Users | grep -v '^_'
 ```
 
 ## System profiler
