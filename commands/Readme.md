@@ -24,6 +24,15 @@ $ diskutil list
 
 # view running system daemons
 $ sudo launchctl list
+
+# list USB devices (via I/O Kit registry)
+$ ioreg -p IOUSB
+
+# list USB devices (via I/O Kit registry and show properties)
+$ ioreg -p IOUSB -l
+
+# list USB devices (via I/O Kit registry and show properties with full-width display)
+$ ioreg -p IOUSB -w0 -l
 ```
 
 ## System profiler
@@ -40,6 +49,9 @@ $ system_profiler -detailLevel mini -xml
 
 # list data types
 $ system_profiler -listDataTypes
+
+# list USB devices
+$ system_profiler SPUSBDataType
 
 # show processor
 $ system_profiler SPHardwareDataType | grep "Processor"
