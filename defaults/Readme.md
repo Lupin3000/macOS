@@ -104,6 +104,9 @@ $ defaults write com.apple.finder FinderSounds -bool false
 
 # turn on empty trash sound
 $ defaults delete com.apple.finder FinderSounds
+
+# show POSIX path
+$ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 ```
 
 ## Safari
@@ -242,4 +245,10 @@ $ defaults delete -g NSScrollViewRubberbanding
 
 # enable AirDrop for ethernet
 $ defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+# expand save dialog
+$ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# expand print dialog
+$ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 ```
