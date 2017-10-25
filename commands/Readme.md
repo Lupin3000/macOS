@@ -34,6 +34,9 @@ $ ioreg -p IOUSB -l
 # list USB devices (via I/O Kit registry and show properties with full-width display)
 $ ioreg -p IOUSB -w0 -l
 
+# show disk performance (disk0)
+$ iostat -d disk0
+
 # list users
 $ dscl . list /Users | grep -v '^_'
 ```
@@ -104,10 +107,19 @@ $ sudo pkill -HUP socketfilterfw
 ## Network
 
 ```shell
+# clear arp cache
+$ arp -ad
+
 # show ip (en0)
 $ ipconfig getifaddr en0
 
-# show mac address (eno)
+# show subnet mask (en0)
+$ ipconfig getoption en0 subnet_mask
+
+# show dns server (en0)
+$ ipconfig getoption en0 domain_name_server
+
+# show mac address (en0)
 $ ifconfig en0 | grep 'ether' | cut -d " " -f2
 
 # restart interface (en0)
@@ -118,6 +130,15 @@ $ sudo lsof -Pni
 
 # list contents of various network-related data structures
 $ sudo netstat -atln
+
+# show list of locations
+$ networksetup -listlocations
+
+# show current location
+$ networksetup -getcurrentlocation
+
+# show all network interfaces
+$ networksetup -listallnetworkservices
 
 # show connections
 $ networksetup -listallhardwareports
@@ -142,6 +163,9 @@ $ cat /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.pli
 
 # flush DNS
 $ sudo killall -HUP mDNSResponder
+
+# scan port of URL range
+$ /System/Library/CoreServices/Applications/Network\ Utility.app/Contents/Resources/stroke www.google.com 80 80
 ```
 
 ## enable features
