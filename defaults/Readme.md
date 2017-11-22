@@ -15,6 +15,21 @@ $ defaults read com.apple.dock
 # add blank space
 $ defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
+# add recent items folder
+$ defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'
+
+# highlights the item under the cursor
+$ defaults write com.apple.dock mouse-over-hilite-stack -bool yes
+
+# show only active Apps
+$ defaults write com.apple.dock static-only -bool true
+
+# active single app mode
+$ defaults write com.apple.dock single-app -bool true
+
+# show hidden apps
+$ defaults write com.apple.Dock showhidden -bool yes
+
 # set icon size to 45 pixels
 $ defaults write com.apple.dock tilesize -int 45
 
@@ -38,6 +53,9 @@ $ defaults write com.apple.dock desktop-picture-show-debug-text -bool true
 
 # don't show wallpaper location
 $ defaults delete com.apple.dock desktop-picture-show-debug-text
+
+# reset Dock
+$ defaults delete com.apple.dock
 ```
 
 # Launchpad

@@ -206,4 +206,22 @@ $ ls -la | open -f -a TextMate
 
 # list installed Apps (via AppStore)
 $ mdfind kMDItemAppStoreHasReceipt=1
+
+# enable TRIM commands on third-party drives
+$ sudo trimforce enable
+
+# force disk cache to be purged
+$ sudo purge
+
+# show download history
+$ sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'
+
+# prevent sleep
+$ caffeinate
+
+# show important dates
+$ cat /usr/share/calendar/calendar.history
+$ cat /usr/share/calendar/calendar.lotr
+$ cat /usr/share/calendar/calendar.birthday
+$ cat /usr/share/calendar/calendar.freebsd
 ```
