@@ -137,11 +137,35 @@ $ defaults write com.apple.finder FinderSounds -bool false
 # turn on empty trash sound
 $ defaults delete com.apple.finder FinderSounds
 
+# folders on top when sorting by name
+$ defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
 # show POSIX path
 $ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
+# show status bar
+$ defaults write com.apple.finder ShowStatusBar -bool true
+
+# show path bar
+$ defaults write com.apple.finder ShowPathbar -bool true
+
 # disable animation when opening the Info window in Finder
 $ defaults write com.apple.finder DisableAllAnimations -bool true
+
+# show internal hard drives on desktop
+$ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+
+# show external hard drives on desktop
+$ defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+
+# show removable media on desktop
+$ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+
+# show mounted servers on desktop
+$ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+
+# disable the warning before emptying the Trash
+$ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 ```
 
 ## Safari
