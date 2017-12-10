@@ -284,6 +284,13 @@ $ defaults read /System/Library/LaunchDaemons/org.apache.httpd.plist
 $ sudo defaults write /System/Library/LaunchDaemons/org.apache.httpd Disabled -bool false
 ```
 
+## Wifi
+
+```shell
+# show Wi-Fi connection history
+$ defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences | grep LastConnected -A 7
+```
+
 ## Enable/Disable features
 
 ```shell

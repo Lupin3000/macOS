@@ -39,6 +39,12 @@ $ iostat -d disk0
 
 # list users
 $ dscl . list /Users | grep -v '^_'
+
+# show memory statistics
+$ vm_stat
+
+# show status of loaded kernel extensions
+$ sudo kextstat -l
 ```
 
 ## System profiler
@@ -168,11 +174,56 @@ $ sudo killall -HUP mDNSResponder
 $ /System/Library/CoreServices/Applications/Network\ Utility.app/Contents/Resources/stroke www.google.com 80 80
 ```
 
-## enable features
+## Date and Time
+
+```shell
+# list available timezones
+$ sudo systemsetup -listtimezones
+
+# set timezone
+$ sudo systemsetup -settimezone Europe/Berlin
+
+# get current status
+$ sudo systemsetup getusingnetworktime
+
+# enable using network time
+$ sudo systemsetup setusingnetworktime on
+
+# disable using network time
+$ sudo systemsetup setusingnetworktime off
+```
+
+## Remote Apple Events
+
+```shell
+# get current status
+$ sudo systemsetup -getremoteappleevents
+
+# enable remote events
+$ sudo systemsetup -setremoteappleevents on
+
+# disable remote events
+$ sudo systemsetup -setremoteappleevents off
+```
+
+## enable/disable features
 
 ```shell
 # enable locate
 $ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+
+# disable notification center service
+$ launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist && \
+killall -9 NotificationCenter
+
+# enable notification center service
+$ launchctl load -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
+
+# enable remote login
+$ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+
+# disable remote login
+$ sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
 ```
 
 ## just for fun
@@ -224,4 +275,7 @@ $ cat /usr/share/calendar/calendar.history
 $ cat /usr/share/calendar/calendar.lotr
 $ cat /usr/share/calendar/calendar.birthday
 $ cat /usr/share/calendar/calendar.freebsd
+
+# lock screen
+$ /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 ```
