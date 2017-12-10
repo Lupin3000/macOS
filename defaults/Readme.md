@@ -11,61 +11,61 @@ Set preferences, the macOS user defaults system works with both the OS and with 
 $ killall Dock
 
 # reset to factory settings
-$ defaults delete com.apple.dock
+$ defaults delete com.apple.Dock
 
 # show current dock settings
-$ defaults read com.apple.dock
+$ defaults read com.apple.Dock
 
 # add blank space
-$ defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+$ defaults write com.apple.Dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
 # add recent items folder
-$ defaults write com.apple.dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'
+$ defaults write com.apple.Dock persistent-others -array-add '{"tile-data" = {"list-type" = 1;}; "tile-type" = "recents-tile";}'
 
 # highlights the item under the cursor
-$ defaults write com.apple.dock mouse-over-hilite-stack -bool yes
+$ defaults write com.apple.Dock mouse-over-hilite-stack -bool yes
 
 # show only active Apps
-$ defaults write com.apple.dock static-only -bool true
+$ defaults write com.apple.Dock static-only -bool true
 
 # active single app mode
-$ defaults write com.apple.dock single-app -bool true
+$ defaults write com.apple.Dock single-app -bool true
 
 # show hidden apps
 $ defaults write com.apple.Dock showhidden -bool yes
 
 # set icon size to 45 pixels
-$ defaults write com.apple.dock tilesize -int 45
+$ defaults write com.apple.Dock tilesize -int 45
 
 # disable auto hide
-$ defaults write com.apple.dock autohide -bool false
+$ defaults write com.apple.Dock autohide -bool false
 
 # enable auto hide
-$ defaults write com.apple.dock autohide -bool true
+$ defaults write com.apple.Dock autohide -bool true
 
 # position bottom
-$ defaults write com.apple.dock orientation -string bottom
+$ defaults write com.apple.Dock orientation -string bottom
 
 # position left
-$ defaults write com.apple.dock orientation -string left
+$ defaults write com.apple.Dock orientation -string left
 
 # position right
-$ defaults write com.apple.dock orientation -string right
+$ defaults write com.apple.Dock orientation -string right
 
 # show wallpaper location
-$ defaults write com.apple.dock desktop-picture-show-debug-text -bool true
+$ defaults write com.apple.Dock desktop-picture-show-debug-text -bool true
 
 # don't show wallpaper location
-$ defaults delete com.apple.dock desktop-picture-show-debug-text
+$ defaults delete com.apple.Dock desktop-picture-show-debug-text
 
 # disable animations when you open an application from the Dock
-$ defaults write com.apple.dock launchanim -bool false
+$ defaults write com.apple.Dock launchanim -bool false
 
 # disable delay when you hide the Dock
 $ defaults write com.apple.Dock autohide-delay -float 0
 
 #set speed for Mission Control (fast)
-$ defaults write com.apple.dock expose-animation-duration -float 0.1
+$ defaults write com.apple.Dock expose-animation-duration -float 0.1
 ```
 
 # Launchpad
@@ -75,17 +75,17 @@ $ defaults write com.apple.dock expose-animation-duration -float 0.1
 $ killall Dock
 
 # enlarging the Icons
-$ defaults write com.apple.dock springboard-rows -int 4
-$ defaults write com.apple.dock springboard-columns -int 4
+$ defaults write com.apple.Dock springboard-rows -int 4
+$ defaults write com.apple.Dock springboard-columns -int 4
 
 # shrinking the Icons
-$ defaults write com.apple.dock springboard-rows -int 10
-$ defaults write com.apple.dock springboard-columns -int 10
+$ defaults write com.apple.Dock springboard-rows -int 10
+$ defaults write com.apple.Dock springboard-columns -int 10
 
 # reset to factory seetings
-$ defaults delete com.apple.dock springboard-rows
-$ defaults delete com.apple.dock springboard-columns
-$ defaults write com.apple.dock ResetLaunchPad -bool true
+$ defaults delete com.apple.Dock springboard-rows
+$ defaults delete com.apple.Dock springboard-columns
+$ defaults write com.apple.Dock ResetLaunchPad -bool true
 ```
 
 # Dashboard
@@ -95,13 +95,13 @@ $ defaults write com.apple.dock ResetLaunchPad -bool true
 $ killall Dock
 
 # show current Dashboard settings
-$ defaults read com.apple.dashboard
+$ defaults read com.apple.Dashboard
 
 # disable dashboard
-$ defaults write com.apple.dashboard mcx-disabled -boolean true
+$ defaults write com.apple.Dashboard mcx-disabled -boolean true
 
 # enable dashboard
-$ defaults write com.apple.dashboard mcx-disabled -boolean false
+$ defaults write com.apple.Dashboard mcx-disabled -boolean false
 ```
 
 ## Finder
@@ -111,7 +111,7 @@ $ defaults write com.apple.dashboard mcx-disabled -boolean false
 $ killall Finder
 
 # show current Finder settings
-$ defaults read com.apple.finder
+$ defaults read com.apple.Finder
 
 # show hidden files
 $ defaults write com.apple.Finder AppleShowAllFiles YES
@@ -126,46 +126,46 @@ $ defaults write NSGlobalDomain AppleShowAllExtensions -bool false
 $ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # enable timestamp on zip filenames
-$ defaults write com.apple.finder ArchiveTimestamp -bool true
+$ defaults write com.apple.Finder ArchiveTimestamp -bool true
 
 # disable timestamp on zip filenames
-$ defaults delete com.apple.finder ArchiveTimestamp
+$ defaults delete com.apple.Finder ArchiveTimestamp
 
 # turn of empty trash sound
-$ defaults write com.apple.finder FinderSounds -bool false
+$ defaults write com.apple.Finder FinderSounds -bool false
 
 # turn on empty trash sound
-$ defaults delete com.apple.finder FinderSounds
+$ defaults delete com.apple.Finder FinderSounds
 
 # folders on top when sorting by name
-$ defaults write com.apple.finder _FXSortFoldersFirst -bool true
+$ defaults write com.apple.Finder _FXSortFoldersFirst -bool true
 
 # show POSIX path
-$ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+$ defaults write com.apple.Finder _FXShowPosixPathInTitle -bool true
 
 # show status bar
-$ defaults write com.apple.finder ShowStatusBar -bool true
+$ defaults write com.apple.Finder ShowStatusBar -bool true
 
 # show path bar
-$ defaults write com.apple.finder ShowPathbar -bool true
+$ defaults write com.apple.Finder ShowPathbar -bool true
 
 # disable animation when opening the Info window in Finder
-$ defaults write com.apple.finder DisableAllAnimations -bool true
+$ defaults write com.apple.Finder DisableAllAnimations -bool true
 
 # show internal hard drives on desktop
-$ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
+$ defaults write com.apple.Finder ShowHardDrivesOnDesktop -bool true
 
 # show external hard drives on desktop
-$ defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+$ defaults write com.apple.Finder ShowExternalHardDrivesOnDesktop -bool true
 
 # show removable media on desktop
-$ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
+$ defaults write com.apple.Finder ShowRemovableMediaOnDesktop -bool true
 
 # show mounted servers on desktop
-$ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
+$ defaults write com.apple.Finder ShowMountedServersOnDesktop -bool true
 
 # disable the warning before emptying the Trash
-$ defaults write com.apple.finder WarnOnEmptyTrash -bool false
+$ defaults write com.apple.Finder WarnOnEmptyTrash -bool false
 ```
 
 ## Safari
@@ -193,10 +193,10 @@ $ defaults write com.apple.Safari IncludeDevelopMenu -bool false
 $ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 
 # enable tab memory
-$ defaults write com.apple.safari NSQuitAlwaysKeepsWindows -bool true
+$ defaults write com.apple.Safari NSQuitAlwaysKeepsWindows -bool true
 
 # disable tab memory
-$ defaults write com.apple.safari NSQuitAlwaysKeepsWindows -bool false
+$ defaults write com.apple.Safari NSQuitAlwaysKeepsWindows -bool false
 ```
 
 ## Preview
@@ -214,6 +214,9 @@ $ defaults read com.apple.Terminal
 
 # disable line marks
 $ defaults write com.apple.Terminal ShowLineMarks -int 0
+
+# use UTF-8 only
+$ defaults write com.apple.Terminal StringEncodings -array 4
 ```
 
 ## Spotlight
@@ -231,9 +234,6 @@ $ defaults read com.apple.Photos
 
 # prevent automatically opening
 $ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-# use UTF-8 only
-$ defaults write com.apple.terminal StringEncodings -array 4
 ```
 
 ## ScreenSharing
