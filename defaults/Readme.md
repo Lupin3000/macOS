@@ -1,5 +1,9 @@
 # defaults
 
+Set preferences, the macOS user defaults system works with both the OS and with individual applications.
+
+**Note:** If you change a default that belongs to a running application, the application won't see the change and might even overwrite the default. In general you should close an application before changing its defaults, in the case of Dock and Finder defaults - restart them after applying! Preferences are stored in a set of files under _~/Library/Preferences_, however using the defaults command is much safer than manually editing a .plist file.
+
 ## Dock
 
 ```shell
@@ -54,40 +58,50 @@ $ defaults write com.apple.dock desktop-picture-show-debug-text -bool true
 # don't show wallpaper location
 $ defaults delete com.apple.dock desktop-picture-show-debug-text
 
-# reset Dock
-$ defaults delete com.apple.dock
+# disable animations when you open an application from the Dock
+$ defaults write com.apple.dock launchanim -bool false
+
+# disable delay when you hide the Dock
+$ defaults write com.apple.Dock autohide-delay -float 0
+
+#set speed for Mission Control (fast)
+$ defaults write com.apple.dock expose-animation-duration -float 0.1
 ```
 
 # Launchpad
 
 ```shell
+# restart Launchpad
+$ killall Dock
+
 # enlarging the Icons
 $ defaults write com.apple.dock springboard-rows -int 4
 $ defaults write com.apple.dock springboard-columns -int 4
-$ killall Dock
 
 # shrinking the Icons
 $ defaults write com.apple.dock springboard-rows -int 10
 $ defaults write com.apple.dock springboard-columns -int 10
-$ killall Dock
 
 # reset to factory seetings
 $ defaults delete com.apple.dock springboard-rows
 $ defaults delete com.apple.dock springboard-columns
 $ defaults write com.apple.dock ResetLaunchPad -bool true
-$ killall Dock
 ```
 
 # Dashboard
 
 ```shell
+# restart Dashboard
+$ killall Dock
+
+# show current Dashboard settings
+$ defaults read com.apple.dashboard
+
 # disable dashboard
 $ defaults write com.apple.dashboard mcx-disabled -boolean true
-$ killall Dock
 
 # enable dashboard
 $ defaults write com.apple.dashboard mcx-disabled -boolean false
-$ killall Dock
 ```
 
 ## Finder
@@ -125,6 +139,9 @@ $ defaults delete com.apple.finder FinderSounds
 
 # show POSIX path
 $ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+# disable animation when opening the Info window in Finder
+$ defaults write com.apple.finder DisableAllAnimations -bool true
 ```
 
 ## Safari
@@ -170,6 +187,9 @@ $ defaults read com.apple.Preview
 ```shell
 # show current terminal settings
 $ defaults read com.apple.Terminal
+
+# disable line marks
+$ defaults write com.apple.Terminal ShowLineMarks -int 0
 ```
 
 ## Spotlight
@@ -184,6 +204,12 @@ $ defaults read com.apple.Spotlight
 ```shell
 # show current photos settings
 $ defaults read com.apple.Photos
+
+# prevent automatically opening
+$ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+# use UTF-8 only
+$ defaults write com.apple.terminal StringEncodings -array 4
 ```
 
 ## ScreenSharing
@@ -269,4 +295,10 @@ $ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 # expand print dialog
 $ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+# disable animations when opening and closing windows
+$ defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+# disable animations when opening a Quick Look window
+$ defaults write -g QLPanelAnimationDuration -float 0
 ```
