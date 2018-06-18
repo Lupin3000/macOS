@@ -146,8 +146,14 @@ $ networksetup -getcurrentlocation
 # show all network interfaces
 $ networksetup -listallnetworkservices
 
-# show connections
+# displays list of hardware ports
 $ networksetup -listallhardwareports
+
+# displays a list of network services
+$ networksetup -listnetworkserviceorder
+
+# show specific Displays ethernet address
+$ networksetup -getmacaddress en0
 
 # disable interface (en0)
 $ networksetup -setairportpower en0 off
