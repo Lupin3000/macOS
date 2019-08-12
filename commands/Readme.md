@@ -45,6 +45,15 @@ $ vm_stat
 
 # show status of loaded kernel extensions
 $ sudo kextstat -l
+
+# list all users
+$ dscl . list /Users
+
+# list all users and informations
+$ dscacheutil -q user
+
+# list all groups and informations
+$ dscacheutil -q group
 ```
 
 ## System profiler
