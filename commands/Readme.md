@@ -294,3 +294,13 @@ $ cat /usr/share/calendar/calendar.freebsd
 # lock screen
 $ /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
 ```
+
+## Reset Network Settings
+
+```shell
+# change directory
+$ cd /Library/Preferences/SystemConfiguration/
+
+# delete files
+$ sudo rm -f com.apple.airport.preferences.plist com.apple.network.identification.plist com.apple.wifi.message-tracer.plist NetworkInterfaces.plist preferences.plist
+```
